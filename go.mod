@@ -1,4 +1,4 @@
-module github.com/ricci2511/riccis-homelab-utils/dupescout
+module github.com/ricci2511/dupescout
 
 go 1.21.3
 
