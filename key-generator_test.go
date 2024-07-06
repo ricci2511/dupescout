@@ -1,4 +1,4 @@
-package dupescout
+package filecollate
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 
 // Helper to create a temp file with the given string content and a function to remove it when done.
 func createTempFile(content string) (os.File, func()) {
-	f, err := os.CreateTemp("", "dupescout")
+	f, err := os.CreateTemp("", "filecollate")
 	if err != nil {
 		fmt.Println(err)
 	}

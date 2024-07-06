@@ -1,4 +1,4 @@
-package dupescout
+package filecollate
 
 import (
 	"reflect"

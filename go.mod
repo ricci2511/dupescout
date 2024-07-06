@@ -1,4 +1,4 @@
-module github.com/ricci2511/dupescout
+module github.com/ricci2511/filecollate
 
 go 1.21.3
 

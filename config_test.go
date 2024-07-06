@@ -1,4 +1,4 @@
-package dupescout
+package filecollate
 
 import (
 	"os"
@@ -8,7 +8,7 @@ import (
 )
 
 func TestSanitizePath(t *testing.T) {
-	cfg := &Cfg{Paths: []string{"~/Dev", "~/Dev/../dupescout"}}
+	cfg := &Cfg{Paths: []string{"~/Dev", "~/Dev/../filecollate"}}
 	path := sanitizePath(cfg.Paths[0])
 
 	home, _ := os.UserHomeDir()
@@ -24,12 +24,12 @@ func TestSanitizePath(t *testing.T) {
 
 	path = sanitizePath(cfg.Paths[1]) // Use second path now
 
-	if isWindows && path != home+"\\dupescout" {
-		t.Errorf("Expected %s, got %s", home+"\\dupescout", path)
+	if isWindows && path != home+"\\filecollate" {
+		t.Errorf("Expected %s, got %s", home+"\\filecollate", path)
 	}
 
-	if !isWindows && path != home+"/dupescout" {
-		t.Errorf("Expected %s, got %s", home+"/dupescout", path)
+	if !isWindows && path != home+"/filecollate" {
+		t.Errorf("Expected %s, got %s", home+"/filecollate", path)
 	}
 }
 

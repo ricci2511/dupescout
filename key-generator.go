@@ -1,4 +1,4 @@
-package dupescout
+package filecollate
 
 import (
 	"crypto/sha256"
@@ -14,7 +14,7 @@ var (
 	// Used to skip a file during key generation.
 	//
 	// These kind of errors are ignored and not returned to the caller
-	// of dupescout.GetResults() or dupescout.StreamResults().
+	// of filecollate.GetResults() or filecollate.StreamResults().
 	ErrSkipFile = fmt.Errorf("skip file")
 )
 
