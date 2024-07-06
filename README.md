@@ -1,9 +1,9 @@
 # dupescout
-A tiny Go package to concurrently find duplicate file paths in a given directory. By default the determination of whether two files are duplicates is based on different hashing functions, but the logic can be customized by providing a custom `dupescout.KeyGeneratorFunc` function (see: [key-generator](#key-generator)).
+A tiny Go package to concurrently find duplicate file paths in a given directory. The determination of whether two files are duplicates can be customized by providing a custom `dupescout.KeyGeneratorFunc` function (see: [key-generator](#key-generator)).
 
 ## Installation
 ```bash
-go get github.com/ricci2511/riccis-homelab-utils/dupescout
+go get github.com/ricci2511/dupescout
 ```
 
 ## Usage
