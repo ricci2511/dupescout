@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/puzpuzpuz/xsync/v2"
+	"github.com/puzpuzpuz/xsync/v3"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -78,7 +78,7 @@ func (dup *filecollate) consumePairs(dupesChan chan []string, stream bool) {
 	defer close(dupesChan)
 
 	// key -> last encountered path
-	m := xsync.NewMapOf[string]()
+	m := xsync.NewMapOf[string, string]()
 
 	for p := range dup.pairs {
 		storedPath, ok := m.Load(p.key)
