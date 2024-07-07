@@ -13,7 +13,7 @@ import (
 
 // Satisfies the flag.Value interface, string values can be provided as a csv or space separated list.
 //
-// `flag.Var(&cfg.Paths, "p", "list of paths to search in for duplicates")`
+// `flag.Var(&cfg.Paths, "p", "list of paths to traverse")`
 type Paths []string
 
 func (p *Paths) String() string {
@@ -30,9 +30,9 @@ func (p *Paths) Set(val string) error {
 
 type Cfg struct {
 	KeyGenerator KeyGeneratorFunc // Function to generate a key based on the file path.
-	Paths                         // List of paths to search in for duplicates.
-	Filters                       // Filters to apply when searching for duplicates.
-	Workers      int              // Number of workers to use when searching for duplicates.
+	Paths                         // List of paths to search in for files to collect/group.
+	Filters                       // Filters to apply when searching for files to group.
+	Workers      int              // Number of max workers to use for the search.
 }
 
 // Beauty stringifies the Cfg struct.

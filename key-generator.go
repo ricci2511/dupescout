@@ -10,16 +10,14 @@ import (
 	"os"
 )
 
-var (
-	// Used to skip a file during key generation.
-	//
-	// These kind of errors are ignored and not returned to the caller
-	// of filecollate.GetResults() or filecollate.StreamResults().
-	ErrSkipFile = fmt.Errorf("skip file")
-)
+// Used to skip a file during key generation.
+//
+// These kind of errors are ignored and not returned to the caller
+// of filecollate.GetResults() or filecollate.StreamResults().
+var ErrSkipFile = fmt.Errorf("skip file")
 
 // KeyGenerator generates a key for a given file path, which then is mapped to
-// a list of file paths that share the same key (duplicates).
+// a list of file paths that share the same key.
 //
 // The provided KeyGeneratorFuncs hash the file contents to generate the key, but
 // the logic can be anything as long as it's deterministic. For example, you could
